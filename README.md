@@ -1,6 +1,6 @@
 # Long Chen — Academic Homepage
 
-A responsive static academic homepage. Open `index.html` in a browser to preview. No installation or build step is needed. The portrait is stored in `assets/portrait.jpg`; research evidence images are organized under `assets/space/`, `assets/infrastructure/`, and `assets/embodied/`. Click a gallery image to open the full-size original.
+A responsive static academic homepage. Open `index.html` in a browser to preview. No installation or build step is needed. The web-optimized portrait is stored in `assets/portrait.webp`; research evidence images are organized under `assets/space/`, `assets/infrastructure/`, and `assets/embodied/`. Click a gallery image to open its high-resolution, web-optimized version.
 
 ## Publish with GitHub Pages
 
