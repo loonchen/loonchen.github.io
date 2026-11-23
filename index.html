@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Long Chen's academic homepage. Research in space computing and AI, networking and sustainable AI infrastructure, and data-centric and embodied AI." name="description"/>
+<meta content="#ffffff" name="theme-color"/>
+<title>Long Chen | Academic Homepage</title>
+<style>
+    :root {
+      color-scheme: light;
+      --ink: #202832;
+      --muted: #586472;
+      --blue: #204f83;
+      --rule: #e2e7ed;
+      --soft: #f5f7fa;
+      --serif: Georgia, "Times New Roman", "Songti SC", serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "PingFang SC", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 32px; }
+    body { margin: 0; background: #fff; color: var(--ink); font: 1rem/1.7 var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: var(--blue); text-decoration: none; text-underline-offset: .2em; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible, summary:focus-visible { outline: 2px solid var(--blue); outline-offset: 5px; border-radius: 2px; }
+    ::selection { background: #dce8f6; }
+    .skip-link { position: absolute; top: -80px; left: 20px; z-index: 10; padding: 10px 18px; background: var(--blue); color: white; }
+    .skip-link:focus { top: 12px; }
+    .layout { display: grid; grid-template-columns: 228px minmax(0, 760px); gap: 76px; max-width: 1184px; padding: 74px 48px 36px; margin: 0 auto; }
+    .sidebar { align-self: start; position: sticky; top: 24px; }
+    .portrait { display: block; width: 156px; height: 200px; object-fit: cover; object-position: center 25%; border-radius: 3px; margin-bottom: 22px; }
+    .name { margin: 0; font: 2.55rem/1.15 var(--serif); letter-spacing: -.045em; font-weight: 400; }
+    .name a { color: var(--ink); }
+    .name a:hover { text-decoration: none; }
+    .name-zh { margin: 9px 0 23px; color: var(--muted); font-size: 1.1rem; letter-spacing: .18em; }
+    .position { margin: 0 0 10px; font-size: .9rem; line-height: 1.65; }
+    .affiliation { margin: 0; font-size: .9rem; line-height: 1.65; color: var(--muted); }
+    .contact { margin-top: 22px; font-size: .875rem; }
+    .contact a { display: block; width: fit-content; margin-bottom: 6px; overflow-wrap: anywhere; }
+    .navigation { border-top: 1px solid var(--rule); margin-top: 29px; padding-top: 23px; display: flex; flex-direction: column; align-items: flex-start; gap: 9px; font-size: .925rem; }
+    .navigation a { color: var(--muted); }
+    .navigation a:hover { color: var(--blue); }
+    main { min-width: 0; }
+    section, article[id] { scroll-margin-top: 32px; }
+    h2 { margin: 0 0 24px; font: 1.9rem/1.25 var(--serif); font-weight: 400; letter-spacing: -.025em; }
+    h3 { font: 1.55rem/1.3 var(--serif); letter-spacing: -.018em; font-weight: 400; margin: 0 0 16px; }
+    p { margin: 0 0 17px; }
+    .about { padding-bottom: 34px; }
+    .intro { font-size: 1.075rem; line-height: 1.8; }
+    .intro strong { font-weight: 600; }
+    .section { padding: 32px 0 38px; border-top: 1px solid var(--rule); }
+    .section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; }
+    .section-head > a { font-size: .875rem; white-space: nowrap; }
+    .research-area + .research-area { border-top: 1px solid var(--rule); padding-top: 34px; margin-top: 37px; }
+    .collaboration { color: var(--muted); }
+    .pub-heading { font-size: .875rem; font-weight: 600; color: var(--muted); margin: 25px 0 15px; }
+    .publications { list-style: none; margin: 0; padding: 0; }
+    .publication { display: grid; grid-template-columns: 102px minmax(0, 1fr); column-gap: 18px; margin: 0 0 22px; }
+    .venue { color: var(--blue); font-size: .8125rem; line-height: 1.6; font-weight: 650; padding-top: 1px; }
+    .pub-type { display: block; margin-top: 5px; font-size: .75rem; font-weight: 400; color: var(--muted); line-height: 1.5; }
+
+    .pub-title { font-size: 1rem; line-height: 1.55; margin: 0; font-weight: 550; }
+    .pub-title a { color: var(--ink); }
+    .pub-title a:hover { color: var(--blue); }
+    details { margin-top: 3px; }
+    summary { cursor: pointer; color: var(--blue); font-size: .875rem; width: fit-content; padding: 3px 0; }
+    details[open] > summary { margin-bottom: 21px; }
+    .service-group { display: grid; grid-template-columns: 155px minmax(0, 1fr); gap: 22px; margin-bottom: 23px; }
+    .service-label { margin: 0; color: var(--muted); font-size: .875rem; font-weight: 600; padding-top: 2px; }
+    .service-group p { margin: 0; }
+    .compact-list { margin: 0; padding-left: 18px; }
+    .compact-list li { padding-left: 3px; margin-bottom: 5px; }
+    .service-group:last-child { margin-bottom: 0; }
+    .awards { margin: 0; padding: 0; list-style: none; }
+    .award { display: grid; grid-template-columns: 56px 1fr; gap: 18px; margin-bottom: 18px; }
+    .award-year { color: var(--muted); font-size: .875rem; padding-top: 2px; }
+    .award p { margin: 0; }
+    .award-name { font-weight: 600; }
+    .award-detail { color: var(--muted); font-size: .875rem; }
+    footer { border-top: 1px solid var(--rule); padding-top: 22px; margin-top: 5px; color: var(--muted); font-size: .8125rem; display: flex; justify-content: space-between; gap: 18px; }
+    @media (min-width: 1100px) { .sidebar::after { content: ""; position: absolute; right: -35px; top: 0; bottom: 0; width: 1px; background: var(--rule); } }
+    @media (max-width: 960px) {
+      .layout { grid-template-columns: 195px minmax(0, 1fr); gap: 40px; padding: 48px 32px 30px; }
+      .name { font-size: 2.25rem; }
+      .publication { grid-template-columns: 90px minmax(0, 1fr); column-gap: 14px; }
+    }
+    @media (max-width: 740px) {
+      html { scroll-padding-top: 20px; }
+      .layout { display: block; max-width: 680px; padding: 34px 24px 28px; }
+      .sidebar { position: static; padding-bottom: 28px; }
+      .portrait { float: right; width: 102px; height: 136px; margin: 0 0 15px 18px; }
+      .contact, .navigation { clear: both; }
+      .affiliation { max-width: 220px; }
+      .name { font-size: 2.5rem; }
+      .name-zh { margin: 5px 0 16px; }
+      .position { margin-bottom: 5px; }
+      .contact { display: flex; flex-wrap: wrap; column-gap: 18px; row-gap: 4px; margin-top: 16px; }
+      .contact a { margin-bottom: 0; }
+      .contact .email { flex-basis: 100%; }
+      .navigation { flex-direction: row; flex-wrap: wrap; gap: 12px 25px; margin-top: 22px; padding-top: 17px; }
+      .about { padding-top: 25px; border-top: 1px solid var(--rule); padding-bottom: 29px; }
+      h2 { font-size: 1.7rem; margin-bottom: 19px; }
+      h3 { font-size: 1.4rem; }
+      .intro { font-size: 1rem; }
+      .section-head { flex-wrap: wrap; gap: 0 16px; margin-bottom: 20px; }
+      .section-head h2 { margin-bottom: 8px; }
+      .publication { grid-template-columns: 1fr; margin-bottom: 25px; }
+      .venue { display: flex; flex-wrap: wrap; gap: 9px; align-items: baseline; margin-bottom: 4px; }
+      .pub-type { display: inline; margin-top: 0; }
+      .service-group { grid-template-columns: 1fr; gap: 6px; }
+      footer { flex-wrap: wrap; gap: 5px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    @media print {
+      .layout { display: block; max-width: none; padding: 0; }
+      .sidebar { position: static; margin-bottom: 28px; }
+      .sidebar::after, .navigation, .skip-link, footer { display: none; }
+      .contact { margin-top: 10px; }
+      .contact a { display: inline; margin-right: 16px; }
+      .publication, .award { break-inside: avoid; }
+      a { color: inherit; }
+      .section { padding-top: 22px; }
+    }
+  
+    .news-list { margin: 0; padding-left: 19px; }
+    .news-list li { padding-left: 4px; margin-bottom: 15px; }
+    .news-list li:last-child { margin-bottom: 0; }
+
+    @media (max-height: 820px) and (min-width: 741px) { .sidebar { position: static; } }
+
+    .service-group .reviewing-intro { margin-bottom: 10px; }
+
+    /* Research evidence: full images, with links to their original size. */
+    .research-evidence { margin: 26px 0 30px; }
+    .evidence-heading { margin: 0 0 13px; font-size: .875rem; font-weight: 600; color: var(--muted); }
+    .research-evidence figure { margin: 0; min-width: 0; }
+    .space-testbed-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+    .evidence-image { display: flex; align-items: center; justify-content: center; aspect-ratio: 4 / 3; overflow: hidden; background: var(--soft); border: 1px solid var(--rule); }
+    .evidence-image img { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .evidence-image:hover { border-color: var(--blue); }
+    .research-evidence figcaption { margin-top: 8px; font-size: .875rem; line-height: 1.5; color: var(--muted); }
+    .research-evidence figcaption strong { display: block; color: var(--ink); font-weight: 550; }
+    .research-evidence figcaption span { display: block; }
+    .space-support-grid { display: grid; grid-template-columns: 1fr 1fr 1.25fr; gap: 16px; margin-top: 20px; }
+    .space-support-grid .evidence-image { aspect-ratio: auto; height: 158px; }
+    .infrastructure-evidence-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 16px; }
+    .infrastructure-evidence-grid .evidence-image { aspect-ratio: 16 / 9; background: #fff; }
+    .infrastructure-evidence-grid .infra-compute .evidence-image img { object-fit: cover; object-position: center 35%; }
+    .infrastructure-evidence-grid .infra-telemetry { grid-column: 1 / -1; }
+    .infrastructure-evidence-grid .infra-telemetry .evidence-image { aspect-ratio: 2530 / 820; background: #17191d; }
+    .embodied-evidence-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 16px; }
+    .embodied-evidence-grid .evidence-image { aspect-ratio: 16 / 9; background: #f3f5f7; }
+    .embodied-evidence-grid .evidence-image img { object-fit: cover; }
+    .embodied-evidence-grid .embodied-wide { grid-column: 1 / -1; }
+    .embodied-evidence-grid .embodied-equipment .evidence-image img,
+    .embodied-evidence-grid .embodied-manipulation .evidence-image img { object-position: center 62%; }
+    @media (max-width: 1100px) and (min-width: 741px), (max-width: 540px) {
+      .space-testbed-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .space-support-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 12px; }
+      .space-support-grid .evidence-image { height: auto; aspect-ratio: 4 / 3; }
+      .space-support-grid .space-radiation { grid-column: 1 / -1; }
+      .space-radiation .evidence-image { aspect-ratio: 1470 / 798; background: #fff; }
+    }
+    @media (max-width: 540px) {
+      .infrastructure-evidence-grid,
+      .embodied-evidence-grid { grid-template-columns: 1fr; }
+      .infrastructure-evidence-grid .infra-telemetry { grid-column: auto; }
+    }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#about">Skip to content</a>
+<div class="layout">
+<aside aria-label="Profile and navigation" class="sidebar"><img alt="Portrait of Long Chen" class="portrait" decoding="async" height="200" src="assets/portrait.jpg" width="156"/>
+<h1 class="name"><a href="#about">Long Chen</a></h1>
+<p class="position">Research Assistant Professor</p>
+<p class="affiliation">Room PQ822<br/>Department of Computing<br/>The Hong Kong Polytechnic University<br/>Hung Hom, Kowloon<br/>Hong Kong, CHINA</p>
+<div class="contact">
+<a class="email" href="mailto:long-loon.chen@polyu.edu.hk">long-loon.chen@polyu.edu.hk</a>
+<a href="https://scholar.google.com/citations?user=iDxfFUkAAAAJ&amp;hl=en" rel="noopener noreferrer" target="_blank">Google Scholar</a>
+<a href="https://www.polyu.edu.hk/comp/people/academic-staff/dr-chen-long/" rel="noopener noreferrer" target="_blank">PolyU profile</a>
+</div>
+<nav aria-label="Main navigation" class="navigation">
+<a href="#about">About</a><a href="#news">News</a>
+<a href="#research">Research &amp; Publications</a>
+<a href="#service">Academic Service</a>
+<a href="#awards">Selected Awards</a>
+</nav>
+</aside>
+<main id="main-content">
+<section aria-labelledby="about-title" class="about" id="about">
+<h2 id="about-title">About</h2>
+<p class="intro">I study efficient and reliable networked systems, with a focus on <a href="#space">Sustainable Space AI</a>, <a href="#infrastructure">Efficient AI Infrastructure</a>, and <a href="#learning">Data-Centric &amp; Embodied AI</a>. My research connects system design with the practical constraints of communication, computation, energy, and physical execution.</p>
+<p>I previously worked as a <strong>Senior Research Scientist at ByteDance</strong>. I conducted postdoctoral research at <strong>Simon Fraser University</strong> with <a href="https://www.cs.sfu.ca/~jcliu/" rel="noopener noreferrer" target="_blank">Prof. Jiangchuan Liu</a> and at <strong>The University of Hong Kong</strong> with <a href="https://web.ece.hku.hk/~iotlab/members/edith.html" rel="noopener noreferrer" target="_blank">Prof. Edith C. H. Ngai</a>. I received my B.Eng. in Software Engineering in June 2016 and my Ph.D. in Software Engineering in March 2022, both from Shanghai Jiao Tong University.</p>
+<p>I collaborate closely with industry partners, grounding my research in production networks, space-system experiments, and industrial robotics. These collaborations support prototype development, evaluation under realistic conditions, and practical deployment.</p>
+</section><section aria-labelledby="news-title" class="section" id="news">
+<h2 id="news-title">News</h2>
+<ul class="news-list">
+<li>I am recruiting <strong>PhD students, postdoctoral researchers, and research assistants</strong> to work on space computing, sustainable AI infrastructure, and embodied AI. Candidates with strong backgrounds in related areas are encouraged to email me their full CV.</li>
+<li>I also welcome <strong>visiting students and researchers</strong> for onsite or remote collaboration. Please get in touch to discuss research interests and potential projects.</li>
+</ul>
+</section>
+<section aria-labelledby="research-title" class="section" id="research">
+<div class="section-head">
+<h2 id="research-title">Research &amp; Publications</h2>
+<a href="https://scholar.google.com/citations?user=iDxfFUkAAAAJ&amp;hl=en" rel="noopener noreferrer" target="_blank">Full publication list</a>
+</div>
+<article aria-labelledby="space-title" class="research-area" id="space">
+<h3 id="space-title">Sustainable Space AI</h3>
+<p>My research on Space AI builds on earlier work in satellite networking and space-terrestrial systems. It follows the path from moving data to sustaining computation in orbit: how inference data travel between satellites, how uplink and downlink transfers can be optimized, and where inference should take place. I extend this work to Space AI architectures supported by energy transfer, including radiation-aware AI services, energy-transfer scheduling, and dedicated laser-charging constellations. Across these efforts, I focus on infrastructure design and service models that enable Space AI to operate reliably under microgravity, limited connectivity, and constrained power.</p>
+<p class="collaboration">I evaluate these ideas using a real Starlink testbed and experimental platforms provided through industry collaboration. With Liangjian Xingtong (量见星通), I work with optical cameras and laser terminals, alongside facilities for microgravity and vacuum experiments. Xingce Weilai (星测未来) provides in-orbit radiation data, connecting system design and evaluation to measurements from operating satellites.</p>
+<div class="research-evidence space-evidence" aria-labelledby="space-evidence-title">
+<h4 id="space-evidence-title" class="evidence-heading">Experimental platforms &amp; data</h4>
+<figure class="space-testbed">
+<div class="space-testbed-strip">
+<a class="evidence-image" href="assets/space/starlink-mobile-hd.png" target="_blank" rel="noopener noreferrer" aria-label="View the vehicle-mounted Starlink test setup at full size"><img src="assets/space/starlink-mobile-hd.png" alt="Round Starlink terminal mounted beside a vehicle during field testing" loading="lazy" decoding="async" width="1563" height="1006"/></a>
+<a class="evidence-image" href="assets/space/starlink-outdoor-hd.png" target="_blank" rel="noopener noreferrer" aria-label="View the outdoor Starlink terminal at full size"><img src="assets/space/starlink-outdoor-hd.png" alt="Round Starlink terminal on its stand in an outdoor test environment" loading="lazy" decoding="async" width="1483" height="1061"/></a>
+<a class="evidence-image" href="assets/space/starlink-winter-hd.png" target="_blank" rel="noopener noreferrer" aria-label="View the satellite test installation in snow at full size"><img src="assets/space/starlink-winter-hd.png" alt="Satellite terminals in a snow-covered field test installation" loading="lazy" decoding="async" width="1086" height="1448"/></a>
+<a class="evidence-image" href="assets/space/starlink-lakeside-hd.png" target="_blank" rel="noopener noreferrer" aria-label="View the lakeside Starlink test setup at full size"><img src="assets/space/starlink-lakeside-hd.png" alt="Rectangular Starlink terminal at a forested lakeside test location" loading="lazy" decoding="async" width="1136" height="1384"/></a>
+</div>
+<figcaption><strong>Starlink testbed</strong><span>Field experiments across deployment environments.</span></figcaption>
+</figure>
+<div class="space-support-grid">
+<figure>
+<a class="evidence-image" href="assets/space/optical-laser-terminal.png" target="_blank" rel="noopener noreferrer" aria-label="View the optical camera and laser terminal at full size"><img src="assets/space/optical-laser-terminal.png" alt="Optical camera and laser terminal with OTA, FSM, and CTS components labeled" loading="lazy" decoding="async" width="504" height="448"/></a>
+<figcaption><strong>Optical camera &amp; laser terminal</strong><span>Liangjian Xingtong</span></figcaption>
+</figure>
+<figure>
+<a class="evidence-image" href="assets/space/vacuum-facility.png" target="_blank" rel="noopener noreferrer" aria-label="View the vacuum test facility at full size"><img src="assets/space/vacuum-facility.png" alt="Vacuum chamber containing an experimental platform and instrumentation" loading="lazy" decoding="async" width="954" height="522"/></a>
+<figcaption><strong>Vacuum test facility</strong><span>Liangjian Xingtong</span></figcaption>
+</figure>
+<figure class="space-radiation">
+<a class="evidence-image" href="assets/space/orbital-radiation.png" target="_blank" rel="noopener noreferrer" aria-label="View the in-orbit radiation map at full size"><img src="assets/space/orbital-radiation.png" alt="Global map of radiation count rates measured in orbit, with a logarithmic color scale" loading="lazy" decoding="async" width="1470" height="798"/></a>
+<figcaption><strong>In-orbit radiation data</strong><span>Xingce Weilai</span></figcaption>
+</figure>
+</div>
+</div>
+
+<h4 class="pub-heading">Selected work</h4><ul class="publications selected-publications"><li class="publication" data-key="hyperion" id="hyperion"><div class="venue">MobiCom 2027</div><div><h4 class="pub-title">Power Banks in Orbit: Architecting Laser Charging Constellations for Space AI</h4></div></li><li class="publication" data-key="zhao2026emerging"><div class="venue">MobiSys 2026</div><div><h4 class="pub-title">OrbitTransit: Traffic Delivery and Diffusion for Earth Observation via Satellite Mobility</h4></div></li><li class="publication" data-key="chen2026orbital"><div class="venue">IEEE Network 2026</div><div><h4 class="pub-title">Orbital AI Over Space Computing: Opportunities, Challenges, and Sustainable Architectures</h4></div></li><li class="publication" data-key="chen2026adaptive"><div class="venue">TMC 2026</div><div><h4 class="pub-title">Adaptive Inter-Satellite Power Transfer for Sustainable Space Computing</h4></div></li><li class="publication" data-key="chou2025commercial"><div class="venue">INFOCOM 2025</div><div><h4 class="pub-title">Commercial dishes can be my ladder: Sustainable and collaborative data offloading in LEO satellite networks</h4></div></li></ul><details><summary>More publications (7)</summary><ul class="publications"><li class="publication" data-key="chen2026rethink"><div class="venue">WWW 2026<span class="pub-type">Short Paper</span></div><div><h4 class="pub-title">Rethink Web Service Resilience in Space: A Radiation-Aware and Sustainable Transmission Solution</h4></div></li><li class="publication" data-key="zhao2025baroc"><div class="venue">INFOCOM 2025</div><div><h4 class="pub-title">Baroc: Concealing packet losses in lsns with bimodal behavior awareness for livecast ingestion</h4></div></li><li class="publication" data-key="chen2023time"><div class="venue">TMC 2024</div><div><h4 class="pub-title">Time-varying resource graph based processing on the way for space-terrestrial integrated vehicle networks</h4></div></li><li class="publication" data-key="ma2023network"><div class="venue">INFOCOM 2023</div><div><h4 class="pub-title">Network characteristics of LEO satellite constellations: A starlink-based measurement from end users</h4></div></li><li class="publication" data-key="chen2022delay"><div class="venue">TMC 2023</div><div><h4 class="pub-title">Delay-optimal cooperation transmission in remote sensing satellite networks</h4></div></li><li class="publication" data-key="chen2021time"><div class="venue">INFOCOM 2021</div><div><h4 class="pub-title">Time-varying resource graph based resource model for space-terrestrial integrated networks</h4></div></li><li class="publication" data-key="chen2021mobility"><div class="venue">INFOCOM 2021</div><div><h4 class="pub-title">Mobility-and load-adaptive controller placement and assignment in LEO satellite networks</h4></div></li></ul></details></article>
+<article aria-labelledby="infrastructure-title" class="research-area" id="infrastructure">
+<h3 id="infrastructure-title">Efficient AI Infrastructure</h3>
+<p>My research examines key components of sustainable AI infrastructure: measuring workloads in large AI data centers and using those measurements to inform computation scheduling while meeting application QoS requirements and responding to the needs of the power grid. At a broader level, I aim to make computing demand a flexible grid resource that can adapt as power-system conditions change. This work builds on my research in production networking. ByteSketch, the data structure I developed, is integrated into FlowLog, a system that has operated continuously in ByteDance’s production environment and supports traffic monitoring across thousands of P4 switches.</p>
+<p class="collaboration">I have long-standing collaborations with ByteDance, VNET Group (世纪互联), China Datang (中国大唐), and State Grid (国家电网) that connect this research to large-scale computing and energy infrastructure. Through these collaborations, I have managed a fleet of several hundred AI accelerators. I am also investigating the systems foundations of token factories: how large accelerator fleets can be operated as efficient, reliable, and grid-aware production systems for generating AI tokens.</p>
+<div class="research-evidence infrastructure-evidence" aria-labelledby="infrastructure-evidence-title">
+<h4 id="infrastructure-evidence-title" class="evidence-heading">Production infrastructure &amp; network measurement</h4>
+<div class="infrastructure-evidence-grid">
+<figure class="infra-compute">
+<a class="evidence-image" href="assets/infrastructure/ai-accelerator-server.jpg" target="_blank" rel="noopener noreferrer" aria-label="View the AI accelerator server at full size"><img src="assets/infrastructure/ai-accelerator-server.jpg" alt="Interior of an AI server with multiple accelerator cards and memory modules" loading="lazy" decoding="async" width="1707" height="1280"/></a>
+<figcaption><strong>AI compute infrastructure</strong><span>A server from the accelerator fleet supporting AI workload studies.</span></figcaption>
+</figure>
+<figure>
+<a class="evidence-image" href="assets/infrastructure/bytesketch.png" target="_blank" rel="noopener noreferrer" aria-label="View the ByteSketch data structure at full size"><img src="assets/infrastructure/bytesketch.png" alt="ByteSketch diagram showing packet-byte updates across counters of different widths" loading="lazy" decoding="async" width="1344" height="525"/></a>
+<figcaption><strong>ByteSketch</strong><span>Byte-level flow measurement under programmable-switch memory constraints.</span></figcaption>
+</figure>
+<figure>
+<a class="evidence-image" href="assets/infrastructure/flowlog-system.png" target="_blank" rel="noopener noreferrer" aria-label="View the FlowLog system architecture at full size"><img src="assets/infrastructure/flowlog-system.png" alt="FlowLog architecture from device-local ByteSketch and flow-ID capture to distributed analysis" loading="lazy" decoding="async" width="2218" height="992"/></a>
+<figcaption><strong>FlowLog system architecture</strong><span>From device-local measurement and flow-ID capture to distributed analysis and visualization.</span></figcaption>
+</figure>
+<figure>
+<a class="evidence-image" href="assets/infrastructure/flowlog-testbed.png" target="_blank" rel="noopener noreferrer" aria-label="View the FlowLog production evaluation testbed at full size"><img src="assets/infrastructure/flowlog-testbed.png" alt="Production evaluation topology connecting a data-center network, P4 gateway, DPDK server, Kafka, and Flink" loading="lazy" decoding="async" width="1684" height="949"/></a>
+<figcaption><strong>Production evaluation testbed</strong><span>End-to-end validation in a 400-Gbps data-center network.</span></figcaption>
+</figure>
+<figure class="infra-telemetry">
+<a class="evidence-image" href="assets/infrastructure/flowlog-telemetry.jpg" target="_blank" rel="noopener noreferrer" aria-label="View the anonymized production traffic telemetry at full size"><img src="assets/infrastructure/flowlog-telemetry.jpg" alt="Anonymized dashboard showing source- and destination-subnet traffic over time" loading="lazy" decoding="async" width="2530" height="820"/></a>
+<figcaption><strong>Production traffic telemetry</strong><span>Anonymized source- and destination-subnet measurements from the deployed system.</span></figcaption>
+</figure>
+</div>
+</div>
+<h4 class="pub-heading">Selected work</h4><ul class="publications selected-publications"><li class="publication" data-key="chen2026flowlog"><div class="venue">ToN 2026</div><div><h4 class="pub-title">FlowLog: Byte-Level Flow Monitoring System in High-Throughput Networks</h4></div></li><li class="publication" data-key="fang2026atlas"><div class="venue">ACM SIGOPS ATC 2026</div><div><h4 class="pub-title">ATLAS: Expert-Guided Sustainable Satellite Backhaul for Off-Grid Wildlife Monitoring</h4></div></li><li class="publication" data-key="du2026tokens"><div class="venue">TSG 2026</div><div><h4 class="pub-title">From Tokens to Energy Flexibility: Quantization-Enabled Demand Response for Data Centers with LLM Inference Workloads</h4></div></li><li class="publication" data-key="liu2023practical"><div class="venue">JSAC 2024</div><div><h4 class="pub-title">Practical network modeling using weak supervision signals for human-centric networking in metaverse</h4></div></li><li class="publication" data-key="tong2026execution"><div class="venue">arXiv 2026<span class="pub-type">Preprint</span></div><div><h4 class="pub-title">Execution-Feasible Dispatch of LLM Pre-training Loads for Renewable-Dominant AI Data Centers</h4></div></li></ul><details><summary>More publications (7)</summary><ul class="publications"><li class="publication" data-key="li2025efficient"><div class="venue">TMC 2025</div><div><h4 class="pub-title">Efficient multipath differential routing and traffic scheduling in ultra-dense LEO satellite networks: A DRL with stackelberg game approach</h4></div></li><li class="publication" data-key="chen2025demand"><div class="venue">TSC 2025</div><div><h4 class="pub-title">On-demand and scalable topology control service for LEO satellite network evolving</h4></div></li><li class="publication" data-key="liu2024adaptive"><div class="venue">TSC 2025</div><div><h4 class="pub-title">An adaptive and interpretable congestion control service based on multi-objective reinforcement learning</h4></div></li><li class="publication" data-key="chen2024adaptive"><div class="venue">TSC 2024</div><div><h4 class="pub-title">Adaptive network management service based on control relation graph for software-defined LEO satellite networks in 6G</h4></div></li><li class="publication" data-key="li2022optimized"><div class="venue">TMC 2023</div><div><h4 class="pub-title">Optimized controller provisioning in software-defined LEO satellite networks</h4></div></li><li class="publication" data-key="li2021processing"><div class="venue">ToN 2022</div><div><h4 class="pub-title">Processing-while-transmitting: Cost-minimized transmission in SDN-based STINs</h4></div></li><li class="publication" data-key="li2021auto"><div class="venue">USENIX ATC 2021</div><div><h4 class="pub-title">AUTO: Adaptive Congestion Control Based on Multi-Objective Reinforcement Learning for the Satellite-Ground Integrated Network</h4></div></li></ul></details></article>
+<article aria-labelledby="learning-title" class="research-area" id="learning">
+<h3 id="learning-title">Data-Centric &amp; Embodied AI</h3>
+<p>I lead the development of embodied-AI foundation models that serve as a shared intelligence layer across diverse robots and industrial equipment. The stack combines multimodal field data and model adaptation through Jiangxing Intelligence’s AutoEdge with world-model-based simulation and pretraining through AutoWorld. The foundation model supports perception, cross-embodiment reasoning, and long-horizon task planning, while an execution harness connects those capabilities to industrial knowledge, operating procedures, and tools, and closes the loop by verifying outcomes in the physical world.</p>
+<p class="collaboration">My collaborations with Jiangxing Intelligence (江行智能) and Unitree Robotics (宇树科技) connect this research to real robots and industrial deployments. The foundation models I have developed are now deployed at thousands of real-world industrial sites, providing a large-scale testbed for studying reliable closed-loop operation over time.</p>
+<div class="research-evidence embodied-evidence" aria-labelledby="embodied-evidence-title">
+<h4 id="embodied-evidence-title" class="evidence-heading">Embodied AI in industrial environments</h4>
+<div class="embodied-evidence-grid">
+<figure class="embodied-platforms">
+<a class="evidence-image" href="assets/embodied/cross-embodiment-platforms.png" target="_blank" rel="noopener noreferrer" aria-label="View the cross-embodiment robot platforms at full size"><img src="assets/embodied/cross-embodiment-platforms.png" alt="Multiple quadruped and humanoid robot platforms assembled in an industrial hall" loading="lazy" decoding="async" width="1108" height="739"/></a>
+<figcaption><strong>Cross-embodiment robot platforms</strong><span>A shared intelligence layer spanning humanoid and quadruped systems for industrial tasks.</span></figcaption>
+</figure>
+<figure>
+<a class="evidence-image" href="assets/embodied/industrial-multi-robot.png" target="_blank" rel="noopener noreferrer" aria-label="View the multi-robot industrial inspection scene at full size"><img src="assets/embodied/industrial-multi-robot.png" alt="A drone and a quadruped robot operating in an industrial site" loading="lazy" decoding="async" width="3088" height="1726"/></a>
+<figcaption><strong>Multi-embodiment industrial inspection</strong><span>Aerial and legged robots operating in a shared industrial environment.</span></figcaption>
+</figure>
+<figure class="embodied-equipment">
+<a class="evidence-image" href="assets/embodied/humanoid-industrial-inspection.jpg" target="_blank" rel="noopener noreferrer" aria-label="View the robot operating around industrial control cabinets at full size"><img src="assets/embodied/humanoid-industrial-inspection.jpg" alt="A humanoid robot operating beside industrial control cabinets" loading="lazy" decoding="async" width="3887" height="2591"/></a>
+<figcaption><strong>Interaction with industrial equipment</strong><span>A humanoid platform performing close-range inspection and operation around control cabinets.</span></figcaption>
+</figure>
+<figure class="embodied-manipulation">
+<a class="evidence-image" href="assets/embodied/dexterous-pouring.jpg" target="_blank" rel="noopener noreferrer" aria-label="View the dexterous liquid-handling task at full size"><img src="assets/embodied/dexterous-pouring.jpg" alt="A robotic hand pouring liquid from a beaker into a small glass" loading="lazy" decoding="async" width="3887" height="2591"/></a>
+<figcaption><strong>Dexterous manipulation</strong><span>A robotic hand performing a precision liquid-handling task.</span></figcaption>
+</figure>
+<figure class="embodied-wide embodied-substation">
+<a class="evidence-image" href="assets/embodied/substation-multi-robot.png" target="_blank" rel="noopener noreferrer" aria-label="View the coordinated substation inspection scene at full size"><img src="assets/embodied/substation-multi-robot.png" alt="A drone, fixed cameras, and a quadruped robot inspecting electrical substation equipment" loading="lazy" decoding="async" width="2448" height="1533"/></a>
+<figcaption><strong>Coordinated substation inspection</strong><span>Drones, fixed cameras, and quadruped robots coordinating sensing across electrical equipment.</span></figcaption>
+</figure>
+</div>
+</div>
+<h4 class="pub-heading">Selected work</h4><ul class="publications selected-publications"><li class="publication" data-key="liu2026towards"><div class="venue">ICLR 2026</div><div><h4 class="pub-title">Towards a Foundation Model for Crowdsourced Label Aggregation</h4></div></li><li class="publication" data-key="liu2025noisy"><div class="venue">TMC 2025</div><div><h4 class="pub-title">Noisy Multi-Label Aggregation With Self-Supervised Graph Transformer in Mobile Crowdsourcing</h4></div></li><li class="publication" data-key="chen2026toward"><div class="venue">ACM MM 2026<span class="pub-type">Abstract</span></div><div><h4 class="pub-title">Toward Physical AI: Challenges and Opportunities in Real-World Industrial Systems</h4></div></li><li class="publication" data-key="liu2024graph"><div class="venue">ICDE 2024</div><div><h4 class="pub-title">Graph contrastive learning for truth inference</h4></div></li><li class="publication" data-key="chou2026wip"><div class="venue">MobiCom 2026<span class="pub-type">WiP</span></div><div><h4 class="pub-title">Dream It Until It Matters: Risk-Aware World Model for Space AI</h4></div></li></ul><details><summary>More publications (4)</summary><ul class="publications"><li class="publication" data-key="chen2026bridging"><div class="venue">WIPAI 2026</div><div><h4 class="pub-title">Bridging VLA Policies and Industrial Robot Controllers via Non-Blocking Action Streaming</h4></div></li><li class="publication" data-key="wang2026combinatorial"><div class="venue">ToN 2026</div><div><h4 class="pub-title">Combinatorial Incentive Mechanism for Bundling Task Assignment in Spatial Crowdsourcing with Non-stationary Agents</h4></div></li><li class="publication" data-key="liu2025bat"><div class="venue">TMC 2025</div><div><h4 class="pub-title">Bat: A versatile bipartite attention-based approach for comprehensive truth inference in mobile crowdsourcing</h4></div></li><li class="publication" data-key="wang2024combinatorial"><div class="venue">INFOCOM 2024</div><div><h4 class="pub-title">Combinatorial incentive mechanism for bundling spatial crowdsourcing with unknown utilities</h4></div></li></ul></details></article>
+</section>
+<section aria-labelledby="service-title" class="section" id="service">
+<h2 id="service-title">Academic Service</h2>
+<div class="service-group">
+<h3 class="service-label">Professional service</h3>
+<p>Secretary-General, Computer Architecture Technical Committee, Shanghai Computer Society.</p>
+</div>
+<div class="service-group"><h3 class="service-label">Conference service</h3><ul class="compact-list">
+<li>Reviewer, ACM MobiCom (since 2027).</li>
+<li>TPC member/reviewer, ACM Multimedia (since 2026).</li>
+<li>Reviewer, IEEE CloudCom (since 2025).</li>
+<li>TPC member/reviewer, IEEE MetaCom (since 2025).</li>
+<li>TPC member/reviewer, IEEE HPCC (since 2024).</li>
+<li>TPC member/reviewer, IEEE ICC (since 2023).</li>
+</ul></div><div class="service-group"><h3 class="service-label">Journal reviewing</h3><p>Nature Environmental Social Sciences; IEEE Transactions on Networking; IEEE Transactions on Mobile Computing; IEEE Transactions on Network Science and Engineering; IEEE Transactions on Cognitive Communications and Networking; IEEE Network; ACM Transactions on Internet of Things; IEEE Wireless Communications Letters; IEEE Transactions on Communications; IEEE Open Journal of the Communications Society; Computer Networks, among others.</p></div></section>
+<section aria-labelledby="awards-title" class="section" id="awards">
+<h2 id="awards-title">Selected Awards</h2>
+<ul class="awards"><li class="award"><span class="award-year">2026</span><div><p><span class="award-name">Distinguished Paper Award</span>, WIPAI</p><p class="award-detail">Bridging VLA Policies and Industrial Robot Controllers via Non-Blocking Action Streaming</p></div></li><li class="award"><span class="award-year">2026</span><div><p><span class="award-name">First Prize</span>, Guizhou Provincial Artificial Intelligence Entrepreneurship Competition</p><p class="award-detail">First-ranked contributor</p></div></li>
+<li class="award"><span class="award-year">2023</span><div><p><span class="award-name">Best Paper Award</span>, IEEE HPCC</p><p class="award-detail">Reinforcement Learning Based Control Domain Division in LEO Satellite Networks</p></div></li>
+<li class="award"><span class="award-year">2020</span><div><p><span class="award-name">Best Paper Award</span>, IEEE HPCC</p><p class="award-detail">Dynamical Controller Placement Among SDN Space-Terrestrial Integrated Networks</p></div></li>
+</ul>
+</section>
+<footer><span>© 2026 Long Chen</span><span>Updated November 2026</span></footer>
+</main>
+</div>
+</body>
+</html>
